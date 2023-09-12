@@ -38,3 +38,48 @@ We also calculated the Jaccard Index for documents based on their word sets. Thi
 
 For queries, we preprocessed them similarly to the documents and calculated the Jaccard Index between each query and document. The top-10 results based on these similarity scores were printed for each query.
 
+## Naive Bayes Classifier with TF-ICF
+
+This section contains the implementation of a Naive Bayes classifier with the TF-ICF (term frequency-inverse category frequency) weighting scheme for classifying documents into predefined categories based on their content. The dataset used for this task consists of news articles categorized into topics such as sports, tech, business, etc.
+
+### Dataset
+
+You can download the dataset from [Kaggle](https://www.kaggle.com/competitions/learn-ai-bbc/data). The dataset is in CSV format with columns 'ArticleId', 'Text', and 'Category'. Preprocessing and classification tasks were performed as follows:
+
+### Data Preprocessing
+
+- Removed unnecessary columns.
+- Cleaned the text by removing punctuation, stop words, and converting it to lowercase.
+- Tokenized the text.
+- Performed stemming to reduce words to their root form.
+- Implemented the TF-ICF weighting scheme.
+
+### Data Splitting
+
+The BBC train dataset was split into training and testing sets using a 70:30 split ratio.
+
+### Training the Naive Bayes Classifier with TF-ICF
+
+- Calculated the probability of each category based on the frequency of documents in the training set belonging to that category.
+- Calculated the probability of each feature given each category based on the TF-ICF values.
+- Implemented the Naive Bayes classifier using these probabilities.
+
+### Testing the Classifier
+
+- Used the testing set to evaluate the performance of the classifier.
+- Calculated accuracy, precision, recall, and F1 score.
+
+### Improving the Classifier
+
+Experimented with different preprocessing techniques and parameters to improve classifier performance, including different split ratios (e.g., 80-20, 60-40, 50-50).
+Tried different types of features, such as n-grams and TF-IDF weights.
+Evaluated classifier performance after each experiment.
+
+### Conclusion
+
+In conclusion, the implementation of the Naive Bayes classifier with TF-ICF weighting scheme achieved an accuracy score of 0.8098434. Several experiments were conducted to improve performance, with the TF-IDF vectorization method outperforming TF-ICF. This is because TF-IDF considers the importance of terms across the entire corpus, providing a more balanced weighting scheme. Additionally, using n-grams decreased accuracy, potentially due to an increase in feature dimensionality and sparsity.
+
+For a more detailed report on the implementation and experiments, please refer to the report.
+
+
+
